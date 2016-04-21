@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<title>Document</title>
+</head>
+<body>
+	<h1>List of Entity</h1>
+	<div ng-app>
+	  <div ng-controller="ClickToEditCtrl">
+	    <div ng-hide="editorEnabled">
+	      {{title}}
+	      <a href="#" ng-click="editorEnabled=!editorEnabled">Edit title</a>
+	    </div>
+	    <div ng-show="editorEnabled">
+	      <input ng-model="title">
+	      <a href="#" ng-click="editorEnabled=!editorEnabled">Done editing?</a>
+	    </div>
+	  </div>
+	</div>
+
+    <script src="../../bower_components/angular/angular.min.js"></script>
+    <script src="../../bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js">
+    </script>
+	<script src="list.of.entity.js"></script>
+
+</body>
+</html>

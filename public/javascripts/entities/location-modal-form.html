@@ -1,0 +1,46 @@
+<div class="location-form">
+
+  <!--***** Modal Header *****-->
+  <div class="modal-header">
+    <h3>Company Location</h3>
+  </div>
+
+  <!--***** Modal Body *****-->
+  <div class="modal-body">
+    <form action="" class="form">
+
+    <!-- <label for="entity_id">id</label>
+    <input type="text"
+           class='form-control'
+           data-ng-model="locationModal.entity._id"> -->
+
+      <div class="form-group">
+        <label for="city">City</label>
+        <input type="text"
+               class="form-control"
+               uppercased
+               data-ng-model="locationModal.location.city"
+               name="city">
+
+       <label for="address">Address</label>
+       <input type="text"
+              class="form-control"
+              data-ng-model="locationModal.location.address"
+              name="address">
+
+       <label for="zip">Zip Code</label>
+       <input type="text"
+             class="form-control"
+             data-ng-model="locationModal.location.zip"
+             name="zip">
+      </div>
+    </form>
+  </div>
+
+  <!--***** Modal Footer *****-->
+  <div class="modal-footer">
+    <button ng-click="locationModal.ok()" class="btn btn-primary">Submit</button>
+    <button ng-click="locationModal.cancel()" class="btn btn-warning">Cancel</button>
+  </div>
+
+</div>

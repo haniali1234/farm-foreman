@@ -1,0 +1,51 @@
+<div data-ui-view>
+  <main class="main-views">
+  <div class="row">
+    <div class="col-md-12">
+    <div class="table-responsive">
+      <i data-ui-sref="settings.add-entities"
+         class="pull-left fa fa-plus fa-2x">
+      </i><div style="padding-top: 10px; font-size: 18px;">Add a Company</div>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Company Info</th>
+                <th>Location</th>
+                <th>Ownership</th>
+                <th>Delete</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr data-ng-repeat="entity in entitiesController.entities | filter: {deleted_at: '!'} | filter: searchKeyword | orderBy:'company_name'">
+                <td><a data-ui-sref="settings.entities.edit-entity({entityId: entity._id})">{{entity.company_name}}</a>
+                </td>
+                <td>
+                    <ul style="padding: 0px">
+                        <li data-ng-repeat="location in entity.location | filter: {deleted_at: '!'}"
+                            style="list-style: none">
+                            {{location.city}}
+                        </li>
+                    </ul>
+                </td>
+
+                <td>
+                    <ul style="padding: 0px">
+                        <li data-ng-repeat="owner in entity.owners | filter: {deleted_at: '!'}"
+                            style="list-style: none">
+                            {{owner.first_name}} {{owner.last_name}}
+                        </li>
+                    </ul>
+                </td>
+
+                <td>
+                    <i data-ng-click="entitiesController.confirmDelete(entity._id)"
+                       class="fa fa-trash fa-2x"></i>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+  </div>
+</div>
+</main>
+</div>

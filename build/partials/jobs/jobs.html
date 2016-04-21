@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html ng-app = "app">
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    </head>
+<body>
+<div>
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6 modal-header">
+        <form name="newProjectForm">
+			<div ng-controller="foremanCntrl">
+                <div>
+			      Entity: 
+			         <select id="entity" class="form-control" ng-model="fields" ng-options="entity for (entity, fields) in entities">
+			                    <option selected disabled class="hideoption">Select</option>
+			         </select>
+			     </div>          
+                <div>
+			         Field: <select id="field" class="form-control" ng-disabled="!fields" ng-model="field" ng-options="field for (field,city) in fields">
+                    <option value=''>Select</option></select>
+			     </div> 
+            </div>
+			 <div>
+			     Jobs: <select class="form-control">
+					<option selected disabled class="hideoption">Select Job</option>
+					<option>1</option>
+					<option>2</option>
+					<option>3</option>
+					<option>4</option>
+					<option>5</option>
+					</select>      
+			 </div>
+
+
+			<h4>Date/Time</h4>
+           	<div ng-controller="DatepickerDemoCtrl">
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="input-group">
+                      <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="dt" is-open="status.opened" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+                      <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                      </span>
+                    </p>
+                </div>
+            </div>
+  
+
+     
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+			<div class="form-group">
+      			<label for="comment">Comment:</label> 
+      			<textarea class="form-control" rows="5" id="comment"></textarea>
+   			</div>
+
+        </form>
+
+        <button class=" col-sm-12 btn btn-info"
+                data-ng-disabled="newProjectForm.$invalid"
+                data-ng-click="newProject.close()">SAVE
+        </button>
+ 
+    </div>
+</div>
+
+
+        <script src="../../bower_components/angular/angular.min.js"></script>
+        <script src="../../bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js">
+        </script>
+         <script src="jobs.controller.js"></script>
+
+         <script>
+            function foremanCntrl($scope) {
+                $scope.entities = {
+                    'Madera': {
+                        'xyz': [],
+                        '123 ': [],
+                        'abc': []
+                    },
+                    'Sanger': {
+                        'A': [],
+                        'B': [],
+                        'C': []
+                    }  
+                };
+            }
+        
+        </script>
+</body>
+</html>
+
+
+
+

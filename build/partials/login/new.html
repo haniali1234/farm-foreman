@@ -1,0 +1,39 @@
+<div>
+    <div class="modal-header">
+        <h2>New Project</h2>
+    </div>
+    <div class="modal-body">
+        <form name="newLoginForm">
+
+            <div class="form-group">
+                <label for="title">Username</label>
+                <input type="text"
+                       required
+                       data-ng-model="newProject.project.title"
+                       name="title"
+                       class="form-control"
+                       id="title"/>
+            </div>
+
+             <div class="form-group">
+                <label for="title">Password</label>
+                <input type="text"
+                       required
+                       data-ng-model="newProject.project.title"
+                       name="title"
+                       class="form-control"
+                       id="title"/>
+            </div>
+
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-info"
+                data-ng-disabled="newLoginForm.$invalid"
+                data-ng-click="newProject.close()">Login
+        </button>
+        <button class="btn btn-danger"
+                data-ng-click="newProject.dismiss()">Cancel
+        </button>
+    </div>
+</div>

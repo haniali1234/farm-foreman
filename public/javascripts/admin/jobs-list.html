@@ -1,0 +1,59 @@
+<div data-ui-view>
+            <main class="main-views">
+                    <div class="row">
+                      <div class="col-md-12">
+                  <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>Entity</th>
+                            <th>Location</th>
+                            <th>Jobs Performed</th>
+                            <!-- <th>Notes</th> -->
+                            <th>Approved</th>
+                            <th>Date</th>
+                            <th>Job submitted</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr data-ng-repeat="job in adminController.jobs  | filter: {deleted_at: '!'} | filter: searchKeyword | orderBy:'-created_at'">
+
+                          <td><a data-ui-sref="admin.jobs.job-detail({jobId: job._id})">{{job.entity.company_name}}</a></td>
+
+                            <td>{{job.location}}</td>
+
+                            <td>
+                                <ul style="padding: 0px;">
+                                    <li data-ng-repeat="task in job.tasks"
+                                        style="list-style: none">{{task.task_name}}
+                                    </li>
+                                </ul>
+                            </td>
+
+                            <!-- <td>{{job.notes}}</td> -->
+
+                            <td><input class="checkbox-primary faChkSqr "
+                                       for="approved"
+                                       type="checkbox"
+                                       data-ng-model="job.approved"
+                                       name="approved"
+                                       data-ng-value="1"
+                                       ng-click="adminController.put(job)"
+                                       checked></td>
+
+
+                            <td>{{job.date | niceDate: 'MM-DD-YYYY'}}</td>
+                            <td>{{job.created_at | niceDate: 'MM-DD-YYYY' }}</td>
+                            <td>
+                                <i data-ng-click="adminController.confirmDelete(job._id)"
+                                   class="fa fa-trash fa-2x"></i>
+                            </td>
+
+                        </tr>
+                        </tbody>
+                    </table>
+                    </div>
+                    </div>
+                    </div>
+            </main>
+</div>

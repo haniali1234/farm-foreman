@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en"
+      data-ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+          href="css/css-deps.css"/>
+    <link rel="stylesheet"
+          href="css/app.css"/>
+    <title>Farm Foreman App</title>
+
+</head>
+<body data-ng-controller="BodyController as body"
+      class="{{body.bodyClass}}">
+
+<nav class="navbar navbar-inverse navbar-fixed-top no-border hide-nav"
+     role="navigation">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+        <button type="button"
+                class="navbar-toggle"
+                data-toggle="collapse"
+                data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+
+        <div class="logo-div"><i class="fa fa-pagelines fa-2x nav-logo"></i></div>
+    </div>
+
+    <!--********** End of Header *********-->
+    <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <ul class="nav side-nav side-ul">
+
+            <li class="brand-li">
+                <a data-ui-sref="admin"
+                   class="brand-a">
+                    <i class="fa fa-fw fa-pagelines brand-fa"></i>
+
+                    <div class="brand-div">Farm <br> Foreman</div>
+                </a>
+            </li>
+
+            <li data-ng-if="currentUser.admin">
+                <a data-ui-sref="admin.jobs"
+                   class="side-a"
+                   id=""><i class="fa fa-fw fa-dashboard side-i-tag"></i> <span class="side-span">Dashboard</span></a>
+            </li>
+
+            <li data-ng-if="currentUser.admin">
+                <a data-ui-sref="settings.entities"
+                   class="side-a"
+                   id=""><i class="fa fa-fw fa-cogs side-i-tag"></i> <span class="side-span">Settings</span>
+                </a>
+            </li>
+            <li data-ng-if="currentUser">
+                <a data-ui-sref="foreman-view"
+                   class="side-a"
+                   id="">
+                    <i class="fa fa-fw fa-leaf side-i-tag"></i> <span class="side-span">Foreman View</span></a></li>
+
+            <li data-ng-if="currentUser">
+                <a data-ng-click="body.logout()"
+                   class="side-a"
+                   id="">
+                    <i class="fa fa-fw fa-sign-out side-i-tag"></i><span class="side-span">Logout</span>
+                </a>
+            </li>
+
+        </ul>
+    </div>
+</nav>
+
+<div class="row">
+    <div class="container">
+        <div data-ui-view
+             class=" col-xs-12 col-sm-11 col-sm-offset-1 col-md-10 col-md-offset-2">
+        </div>
+    </div>
+</div>
+
+<script src="js/deps.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

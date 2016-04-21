@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Full Name</th>
+          <th>Phone</th>
+          <th>Email</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="client in entity.owners | filter: {deleted_at: '!'}">
+          <td>{{client.first_name}} {{client.last_name}}</td>
+          <td>{{client.phone}}</td>
+          <td>{{client.email}}</td>
+          <td><i ng-click="editClient(client)" class="fa fa-pencil fa-2x"></i></td>
+          <td><i ng-click="confirmClientDelete(entity, client._id)" class="fa fa-trash fa-2x"></i></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

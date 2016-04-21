@@ -1,0 +1,59 @@
+<div class="" data-ui-view>
+<!--     <div class="row">
+        <div class="col-md-12"> -->
+            <main>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>Entity</th>
+                            <th>Location</th>
+                            <th>Jobs Performed</th>
+                            <th>Notes</th>
+
+                            <th>Date Job Completed</th>
+                            <th>Date Job submitted</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr data-ng-repeat="job in adminController.jobs | filter: adminController.adminFilter | filter: {deleted_at: '!'} | filter: searchKeyword | orderBy:'-created_at'">
+
+                            <td>{{job.entity.company_name}}</td>
+                            <td>{{job.location}}</td>
+                            <td>
+                                <ul style="padding: 0px;">
+                                    <li data-ng-repeat="task in job.tasks"
+                                        style="list-style: none">{{task.task_name}}
+                                    </li>
+                                </ul>
+                            </td>
+                            <td>{{job.notes}}</td>
+
+
+
+                            <td>{{job.date | niceDate: 'MM-DD-YYYY'}}</td>
+
+                            <td>{{job.created_at | niceDate: 'MM-DD-YYYY' }}</td>
+                            <td>
+                                <i data-ui-sref="foreman-view.sent-foreman.edit-job({jobId: job._id})"
+                                   class="fa fa-pencil fa-2x"></i>
+                            </td>
+
+                            <td>
+                                <i data-ng-click="adminController.confirmDelete(job._id)"
+                                   class="fa fa-trash fa-2x"></i>
+                            </td>
+
+                        </tr>
+                        </tbody>
+                    </table>
+
+                 </div>
+            </div>
+            </div>
+        </main>
+<!--         </div>
+    </div> -->
+</div>

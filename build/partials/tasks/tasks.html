@@ -1,0 +1,37 @@
+<div data-ui-view>
+  <main class="main-views">
+  <div class="row">
+    <div class="col-md-12">
+    <div class="table-responsive">
+      <i data-ng-click="tasksController.add()"
+         class="pull-left fa fa-plus fa-2x">
+      </i><div style="padding-top: 10px; font-size: 18px;">Add Jobs</div>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Task</th>
+                <th>Description</th>
+                <th>Date Created</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr data-ng-repeat="task in tasksController.tasks | filter: searchKeyword | filter: {deleted_at: '!'} | orderBy:'-created_at'">
+                <td>{{task.task_name}}</td>
+                <td>{{task.task_desc}}</td>
+                <td>{{task.created_at | niceDate: 'MM-DD-YYYY h:mm A'}}</td>
+                <td>
+                    <i data-ng-click="tasksController.edit(task)"
+                       class="fa fa-pencil fa-2x"></i>
+                    <i data-ng-click="tasksController.confirmDelete(task._id)"
+                       class="fa fa-trash fa-2x"></i>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <!--<br /><a data-ui-sref="projects"><< Back</a>-->
+    </div>
+  </div>
+</div>
+</main>
+</div>

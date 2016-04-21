@@ -1,0 +1,45 @@
+<div data-ui-view>
+  <main  class="main-views">
+<div class="row">
+  <div class="col-md-6">
+    <h1>Job Details:</h1>
+    <p>
+      <table class="table">
+      <tbody>
+        <tr>
+          <td><strong>Company Name:</strong></td>
+          <td>{{jobController.job.entity.company_name}}</td>
+        </tr>
+        <tr>
+          <td><strong>Location:</strong></td>
+          <td>{{jobController.job.location}}</td>
+        </tr>
+        <tr>
+          <td><strong>Date Job Completed:</strong></td>
+          <td>{{jobController.job.date | niceDate: 'MM-DD-YYYY'}}</td>
+        </tr>
+        <tr>
+          <td><strong>Jobs Completed:</strong></td>
+          <td><ul class="job-details" style="padding: 0;"><li data-ng-repeat="task in jobController.job.tasks">{{task.task_name}}</li></ul></td>
+        </tr>
+        <tr>
+          <td><strong>Job Notes:</strong></td>
+          <td>{{jobController.job.notes}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </p>
+</div>
+</div>
+
+        <div class="row"
+             style="padding-bottom:20px;">
+            <i data-ui-sref="admin.jobs"
+                    class="fa fa-arrow-left fa-2x"
+                    style="float:left">
+            </i>
+        </div>
+
+        </main>
+
+</div>

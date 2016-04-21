@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html ng-app = "app">
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    </head>
+<body>
+	<h1>Logo</h1>
+	<img src="" alt="some_text">
+	<div class="col-sm-3">
+		
+		<button class=" btn btn-info "
+                data-ng-click="">Create new User
+        </button>
+    	<br><br>
+        <button class=" btn btn-info "
+                data-ng-click="">Entity
+        </button>
+        <br><br>
+        <button class=" btn btn-info"
+                data-ng-click="">Jobs
+        </button>
+		<br><br>
+         <button class=" btn btn-info"
+                data-ng-click="">Admin Page
+        </button>
+
+	</div>
+	<div class="col-sm-6" ng-app="" ng-controller="ContactController">
+		<h1>List of Users</h1>
+	    <form class="well">
+	    <label>Users</label> 
+	        <input type="text" name="name" ng-model="newcontact.name"/>
+	   
+	    <label>Date/Time</label> 
+	        <input type="text" name="datetime" ng-model="newcontact.datetime"/>
+	        <br/>
+	        <input type="hidden" ng-model="newcontact.id" />
+	     <input type="button" value="Save" ng-click="saveContact()" class="btn btn-primary"/>
+	    </form>
+	<table class="table table-striped table-bordered">
+	<thead> 
+	<tr>
+	    <th>Users</th>
+	    <th>Date/Time</th>
+	    <th>Action</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr ng-repeat="contact in contacts">
+	    <td>{{ contact.name }}</td>
+	    
+	    <td>{{ contact.datetime }}</td>
+	    <td>
+	        <a  href="#" ng-click="edit(contact.id)">edit</a> | 
+	        <a href="#" ng-click="delete(contact.id)">delete</a> |
+	        <a href="javascript:window.print()" class="btn primary large <no-> </no->print">Print</a>
+	    </td>
+	 </tr>
+	</tbody>
+	</table>    
+	</div>
+
+	        <script src="../../bower_components/angular/angular.min.js"></script>
+        <script src="../../bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js">
+        </script>
+         <script src="list.of.users.js"></script>
+</body>
+</html>

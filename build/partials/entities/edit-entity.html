@@ -1,0 +1,56 @@
+<div data-ui-view>
+  <main class="main-views">
+    <div class="row">
+        <div class="col-md-6">
+            <h3>{{entityController.entity.company_name}}
+                <i ng-click="entityController.editEntity(entityController.entity)"
+                    class="fa fa-pencil fa-1x"
+                    style="cursor:pointer;"
+                    type="button"
+                    name="button">
+                </i>
+            </h3>
+
+            <p>{{entityController.entity.company_phone}}</p>
+
+            <p>{{entityController.entity.company_email}}</p>
+        </div>
+    </div>
+
+    <!--********** This begins the location and client Directives **********-->
+
+    <h3>Location List
+        <i data-ng-click="entityController.addLocation(entityController.entity)"
+           class="fa fa-plus"
+           style="float:right; cursor: pointer"></i></h3>
+
+    <entity-locations
+            data-entity="entityController.entity"
+            data-edit-location="entityController.editLocation"
+            data-confirm-location-delete="entityController.confirmLocationDelete">
+    </entity-locations>
+
+    <h3>Owner Information
+        <i ng-click="entityController.addClient(entityController.entity)"
+           class="fa fa-plus"
+           style="float:right; cursor: pointer"></i>
+    </h3>
+
+    <entity-clients
+            data-entity="entityController.entity"
+            data-edit-client="entityController.editClient"
+            data-confirm-client-delete="entityController.confirmClientDelete">
+    </entity-clients>
+
+    <div class="row"
+         style="padding-bottom:20px;">
+        <i data-ui-sref="settings.entities"
+                class="fa fa-arrow-left fa-2x"
+                type="button"
+                name="button"
+                style="float:left">
+        </i>
+    </div>
+  </main>
+
+</div>

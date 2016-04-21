@@ -1,0 +1,91 @@
+<main>
+  <div class="row">
+    <div class="col-sm-8 col-md-8">
+      <h2 class="dash-breadcrumbs">Foreman View <span class="breadcrumb-title">{{dashboardController.title}}</span></h2>
+    </div>
+     <div class="col-sm-4 col-md-4  search-bar">
+     <div class="search">
+         <input type="text"
+                ng-model="searchKeyword"
+                class="search-input form-control"
+                placeholder="Search for...">
+     </div>
+
+   </div>
+  </div>
+<div data-ui-view
+     class="">
+<!-- 
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group"
+                     id="form-buttons">
+                    <div class="row centered">
+                        <button class="send col-xs-12 col-sm-offset-3 col-sm-6 btn fa fa-paper-plane fa-2x"
+                                type="button"
+                                data-ui-sref="foreman-view.foremans">Create Job
+                        </button>
+                    </div>
+                    <div class="row centered">
+                        <button class="reports col-xs-12 col-sm-offset-3 col-sm-6 btn fa fa-eye fa-2x"
+                                type="button"
+                                data-ui-sref="foreman-view.sent-foreman">View Reports
+                        </button>
+                    </div>
+                    <div class="row centered">
+                        <button class="logout col-xs-12 col-sm-offset-3 col-sm-6 btn  fa fa-sign-out fa-2x"
+                                id="logout-button"
+                                type="button"
+                                data-ng-click="body.logout()">Logout
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <!-- testing -->
+        <div class="col-xs-12 col-md-4 create-job">
+          <div data-ui-sref="foreman-view.foremans" class="col-xs-12 col-md-12 btn btn-primary btn-lg">
+            <div class="row">
+              <div class="col-xs-3 ">
+                <i class="fa fa-paper-plane fa-4x"></i>
+              </div>
+            <div class="col-xs-9">
+              <div style="padding: 15px 0;">Create Job</div>
+            </div>
+          </div>
+          </div>
+        </div>
+        
+        <div  class="col-xs-12 col-md-4 view-reports">
+         <div data-ui-sref="foreman-view.sent-foreman" class="col-xs-12 col-md-12 btn btn-danger btn-lg">
+          <div class="row">
+            <div class="col-xs-3">
+             <i class=" fa fa-eye fa-4x"></i>
+            </div>
+            <div class="col-xs-9">
+              <div style="padding: 9px 0;"></div>
+              <div>View Reports</div>
+            </div>
+          </div>
+         </div>
+        </div>
+  
+        <div  class="col-xs-12 col-md-4 log-out">
+          <div data-ui-sref="admin.report-job" class="col-xs-12 col-md-12 btn btn-success btn-lg">
+
+          <div class="row">
+            <div class="col-xs-3">
+              <i class="fa fa-sign-out fa-4x"></i>
+            </div>
+            <div class="col-xs-9 ">
+              <div id="logout-button"
+                  type="button"
+                  data-ng-click="body.logout()"
+                  style="padding: 15px 0;">Log out</div>
+            </div>
+          </div>
+          </div>
+        </div>
+    <!-- end -->
+    </div>
+</main>

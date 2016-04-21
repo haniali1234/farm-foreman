@@ -1,0 +1,434 @@
+a:hover, a:active, a:focus{
+  color: rgb(4,112,29) !important; 
+}
+body{
+  background-color: #eee;
+  /*font: normal normal normal 14px/1 FontAwesome;*/
+}
+.navbar {
+    /*position: fixed;
+    min-width: 100%;*/
+}
+
+.nav-title {
+    text-align: center;
+    color: #9d9d9d;
+}
+
+.dash-li:hover {
+    color: #fff;
+
+}
+
+.dash-ul {
+    text-align: center;
+}
+
+.dash {
+    background-color: #222;
+    color: #9d9d9d;
+    height: 100%;
+}
+
+/*centering two buttons the foreman sees*/
+.centered {
+    text-align: center;
+}
+
+.menu {
+    background-color: #49983C;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    /*color: white;*/
+}
+
+/*adding*/
+.fa-plus:before {
+    /*padding-right: 10px;*/
+}
+
+.title-form {
+    padding-top: 65px;
+}
+
+/*between edit and remove*/
+.fa-pencil:before {
+    /*padding-right: 35px;*/
+}
+
+/*the edit button*/
+.fa-2x {
+    cursor: pointer;
+    padding: 10px;
+}
+
+/*in the user page, admin col*/
+.admin {
+    font-weight: bold;
+}
+
+.send-button {
+    padding-top: 20px;
+}
+
+.fa-send:before, .fa-paper-plane:before {
+    padding-right: 30px;
+    /*color: yellow;*/
+}
+
+.fa-eye:before {
+    padding-right: 30px;
+    /*color: yellow;*/
+}
+
+.fa-sign-out:before {
+    padding-right: 30px;
+    /*color: yellow;*/
+}
+/*
+.logout {
+    margin-top: 5%;
+    padding: 10px 50px 10px 50px;
+    color: white;
+}*/
+
+/*.reports {
+    margin-top: 5%;
+    padding: 10px 50px 10px 50px;
+    color: white;
+}
+
+.foreman-form-header {
+    background-color: #49983C;
+}*/
+
+/*back button*/
+.veiw-reports-button {
+    padding-left: 15px;
+}
+
+.form-foreman {
+    margin-left: -15px !important;
+    margin-right: -15px !important;
+}
+
+.nav-pills > li.active > a,
+.nav-pills > li.active > a:focus,
+.nav-pills > li.active > a:hover {
+}
+
+#foreman-logout {
+    color: white;
+    font-size: 20px;
+}
+
+
+
+/*checkbox in admin and pending*/
+input.faChkSqr:checked:after, input.faChkSqr:after {
+  visibility: visible;
+  font-family: FontAwesome;
+  font-size:25px;height: 17px; width: 17px;
+  position: relative;
+  top: -3px;
+  left: 0px;
+  background-color:#FFF;
+  display: inline-block;
+}
+input.faChkSqr:checked:after {
+  content: '\f14a';
+}
+input.faChkSqr:after {
+  content: '\f096';
+}
+/*end of checkbox for admin and pending*/
+/*end of admin page*/
+/*End of foreman view*/
+@media screen and (max-width: 767px) {
+    /*foreman view*/
+    /*send button*/
+    .send {
+        margin-top: 35px;
+        padding: 10px;
+        color: white;
+    }
+
+    /*Report button*/
+    .reports {
+        padding: 10px 10px 10px 10px;
+    }
+
+    /*End of foreman view*/
+
+    .fa.pull-right {
+        padding-top: 15%;
+    }
+
+}
+
+/*Admin page firstname*/
+@media screen and (max-width: 530px) {
+    .pull-right {
+        display: none;
+    }
+}
+
+.header-row {
+    margin-bottom: 20px;
+}
+
+.foreman-view button:hover {
+    color: #FFFFFF;
+}
+
+.foreman-view {
+  margin-top: 100px;
+}
+
+body.pending #pending {
+    /*color: yellow;*/
+}
+
+body.dashboard #dashboard {
+    /*color: yellow;*/
+}
+
+body.foreman #foreman {
+    /*color: yellow;*/
+}
+
+body.settings #settings {
+    /*color: yellow;*/
+}
+
+body.foreman p.info {
+    font-weight: bold;
+    font-size: 1.3em;
+    margin-bottom: 20px;
+
+}
+/****** job details page ******/
+.job-details li{
+  list-style-type: none;
+}
+
+.dash-breadcrumbs {
+  padding-bottom: 9px;
+  margin: 20px 0 20px;
+  border-bottom: 1px solid #8b8b8b;
+}
+/******* Navbar and side nav *******/
+
+.side-nav {
+    position: fixed;
+    top: 0px;
+    left: 225px;
+    width: 225px;
+    margin-left: -225px;
+    border: none;
+    border-radius: 0;
+    overflow-y: auto;
+    background-color: #222;
+    bottom: 0;
+    overflow-x: hidden;
+    padding-bottom: 40px;
+    visibility: visible;
+}
+
+.search-bar{
+  padding-top: 8px;
+}
+
+.search-input{
+  border-radius: 18px;
+}
+
+.main-views{
+  margin-top: 10px!important;
+}
+
+.badge-size{
+  font-size: 25px;
+}
+
+.side-a{
+  color: #eee;
+  font-size: 20px
+}
+
+.side-a:hover{
+  background-color: #eee;
+  color: #333;
+}
+
+.side-a:active{
+  background-color: #eee;
+  color: #333!important;
+}
+
+main {
+    margin-top: 0px;
+    /*top: -20px;*/
+}
+
+/*admin page*/
+
+.breadcrumb-title{
+font-size: 22px;
+color: #666;
+}
+
+.search {
+    padding-left: 0px;
+    padding-top: 15px;
+}
+
+.no-border{
+  border: 0px;
+}
+
+.brand-li{
+
+}
+
+.brand-a{
+  background-color: #04701D;
+  color: #eee;
+  padding: 7px 15px!important;
+}
+
+.brand-fa{
+  font-size: 3.5em!important;
+}
+
+
+
+.brand-div{
+    float: right;
+    padding-right: 40px;
+    padding-left: 17px;
+    border-left: 1px solid #eee;
+    font-size: 18px;
+}
+.fa-3x{
+  padding-top: 10px;
+}
+/*Media */
+@media screen and (min-width: 400px) {
+    .log-out {
+        text-align: center;
+        margin: 0 auto;
+        padding-top: 10px;
+    }
+    .view-reports{
+      text-align: center;
+       margin: 0 auto;
+       padding-top: 10px;
+    }
+    .create-job{
+       text-align: center;
+       margin: 0 auto;
+       padding-top: 10px;
+    }
+    .companies{
+      text-align: center;
+       margin: 0 auto;
+       padding-top: 10px;
+    }
+    .authorized{
+      text-align: center;
+       margin: 0 auto;
+       padding-top: 10px;
+    }
+    .staff{
+            text-align: center;
+       margin: 0 auto;
+       padding-top: 10px;
+    }
+
+}
+/*end of media*/
+
+.hide-nav{
+visibility: hidden;
+}
+
+/*********** Media Queries for header and sidebar *********/
+@media screen and (max-width: 530px) {
+    .pull-right {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1060px){
+  .brand-div{
+    display: none;
+  }
+
+  .side-span{
+    display: none;
+  }
+
+  .side-i-tag{
+    font-size: 2em!important;
+  }
+
+.side-nav  {
+  width: 100px;
+}
+
+}
+
+@media screen and (min-width: 768px){
+  .nav-logo{
+    display: none;
+  }
+
+
+}
+
+@media screen and (max-width: 767px) {
+
+.search-bar{
+  display: none;
+}
+  .hide-nav{
+    visibility: visible;
+  }
+
+  .side-nav{
+    position: inherit;
+    top: 0px;
+    left: 0px;
+    margin-left: 0px;
+    width: 220px;
+    float: right;
+  }
+
+  .brand-li{
+    display: none!important;
+  }
+
+  .side-span{
+    display: inherit;
+    padding: 10px 0;
+    }
+
+  .side-i-tag{
+    float: left;
+    padding-right: 10px;
+  }
+
+  main{
+    padding-top: 40px;
+  }
+
+  .nav-logo{
+    background-color: green;
+    color: #eee;
+    padding: 8px;
+    margin-left: 15px;
+    font-size: 2.5em!important;
+  }
+}

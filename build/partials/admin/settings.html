@@ -1,0 +1,65 @@
+<main>
+  <div class="row">
+    <div class="col-sm-8 col-md-8">
+        <h2 class="dash-breadcrumbs">Settings  <span class="breadcrumb-title"> {{settings.title}}</span></h2>
+    </div>
+    <div class="col-sm-4 col-md-4  search-bar">
+     <div class="search">
+         <input type="text"
+                ng-model="searchKeyword"
+                class="search-input form-control"
+                placeholder="Search for...">
+     </div>
+
+   </div>
+  </div>
+
+  <div class="row" style="">
+
+    <div class="col-md-4 companies">
+      <div data-ui-sref="settings.entities" class="col-xs-12 col-md-12 btn btn-primary btn-lg ">
+        <div class="row">
+          <div class="col-xs-3">
+        <i class="fa fa-building fa-4x"></i>
+        </div>
+        <div class="col-xs-9">
+          <div style="padding: 15px 0;">Companies</div>
+        </div>
+        </div>
+      </div>
+    </div>
+
+    <div  class="col-md-4 authorized">
+      <div data-ui-sref="settings.tasks" class="col-xs-12  col-md-12 btn btn-danger btn-lg">
+
+        <div class="row">
+          <div class="col-xs-3">
+        <i class="fa fa-tasks fa-4x"></i>
+        </div>
+        <div class="col-xs-9">
+          <div style="padding: 15px 0;">Authorized Jobs</div>
+        </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div  class="col-md-4 staff">
+      <div data-ui-sref="settings.users" class=" col-xs-12  col-md-12 btn btn-success btn-lg">
+        <div class="row">
+          <div class="col-xs-3">
+        <i class="fa fa-users fa-4x"></i>
+        </div>
+        <div class="col-xs-9">
+          <div style="padding: 15px 0;">Staff</div>
+        </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="row">
+<div data-ui-view class="col-md-12"></div>
+</div>
+</main>

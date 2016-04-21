@@ -1,0 +1,132 @@
+<main class="main-views">
+<div class="row">
+  <div class="col-md-4">
+    <h3>Company Information</h3>
+  </div>
+
+  <div class="col-md-8">
+    <div class="col-md-6">
+    <form class="form">
+        <div class="form-group">
+            <label for="company_name">Company Name</label>
+            <input type="text"
+                   class="form-control"
+                   style="text-transform:capitalize"
+                   data-ng-model="addEntity.entity.company_name"
+                   name="company_name"
+                   id="company_name"/>
+
+            <label for="company_phone">Company Phone</label>
+            <input type="text"
+                   class="form-control"
+                   data-ng-model="addEntity.entity.company_phone"
+                   name="company_phone"
+                   id="company_phone"/>
+
+            <label for="company_email">Company Email</label>
+            <input type="text"
+                   class="form-control"
+                   data-ng-model="addEntity.entity.company_email"
+                   name="company_email"
+                   id="company_email"/>
+        </div>
+      </form>
+      </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-4">
+    <h3>Locations</h3>
+    <i class = " fa fa-plus fa-2x" data-ng-click="addEntity.addLocations(addEntity.entity.locations)" style="float:right"></i>
+    <i class="fa fa-trash fa-2x" data-ng-click="addEntity.removeLocs()" style="float: right; clear: both;" ></i>
+  </div>
+
+  <div class="col-md-8">
+    <div data-ng-repeat="location in addEntity.locations" class="form-group col-md-6">
+      <h4 style="">{{location.id}}</h4>
+    <form class="" method="post">
+                  <label class="control-label">City</label>
+                              <input type="text"
+                                     class="form-control"
+                                     style="text-transform:capitalize"
+                                     placeholder=""
+                                     data-ng-model="location.city"
+                                     uppercased
+                                     name=''
+                                     id="">
+                  <label class="control-label">Address</label>
+                              <input type="text"
+                                     class="form-control"
+                                     placeholder=""
+                                     data-ng-model="location.address"
+                                     name=""
+                                     id="">
+                  <label class="control-label">Zip</label>
+                              <input type="text"
+                                     class="form-control"
+                                     placeholder=""
+                                     data-ng-model="location.zip"
+                                     name=''
+                                     id="">
+                </form>
+          </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-4">
+    <h3>Add Owners</h3>
+      <i class = " fa fa-plus fa-2x" data-ng-click="addEntity.addClients(addEntity.entity.owners)" style="float:right"></i>
+      <i class="fa fa-trash fa-2x" data-ng-click="addEntity.removeClients()" style="float: right; clear: both;" ></i>
+  </div>
+
+  <div class="col-md-8">
+    <form class="" method="post">
+              <div data-ng-repeat="client in addEntity.clients" class="form-group col-md-6">
+                <h4>{{client.id}}</h4>
+                  <label class="control-label">First Name</label>
+                              <input type="text"
+                                     class="form-control"
+                                     style="text-transform:capitalize"
+                                     placeholder=""
+                                     data-ng-model="client.first_name"
+                                     name=''
+                                     id="">
+                             <label class="control-label">Last Name</label>
+                              <input type="text"
+                                     class="form-control"
+                                     placeholder=""
+                                     data-ng-model="client.last_name"
+                                     name=""
+                                     id="">
+                             <label class="control-label">Email</label>
+                              <input type="text"
+                                     class="form-control"
+                                     placeholder=""
+                                     data-ng-model="client.email"
+                                     name=''
+                                     id="">
+                             <label class="control-label">Phone</label>
+                             <input type="text"
+                                    class="form-control"
+                                    placeholder=""
+                                    data-ng-model="client.phone"
+                                    name=''
+                                    id="">
+                      </div>
+                    </form>
+  </div>
+</div>
+
+<button class="btn btn-primary"
+        type="button"
+        ng-click="addEntity.add(addEntity.entity, addEntity.locations, addEntity.clients)"
+        data-ui-sref="settings.entities">OK
+</button>
+<button class="btn btn-warning"
+        type="button"
+        data-ui-sref="settings.entities">Go Back
+</button>
+</div>
+</main>

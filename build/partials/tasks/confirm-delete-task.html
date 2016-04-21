@@ -1,0 +1,21 @@
+<div class="user-form">
+    <div class="modal-header">
+        <h3 class="text-danger modal-title">Are you sure?</h3>
+    </div>
+    <div class="modal-body">
+        <div class="text-danger">
+            This can not be undone.
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-danger"
+                type="button"
+                ng-click="taskDelete.close()">
+            Yes, delete this job.
+        </button>
+        <button class="btn btn-warning"
+                type="button"
+                ng-click="taskDelete.dismiss()">Cancel
+        </button>
+    </div>
+</div>

@@ -1,0 +1,52 @@
+<div data-ui-sref>
+        <main class="main-views">
+
+            <div class="row">
+              <div class="col-md-12">
+                <div class="table-responsive">
+
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>Entity</th>
+                            <th>Location</th>
+                            <th>Jobs Performed</th>
+                            <th>Notes</th>
+                            <th>Approved</th>
+                            <th>Date</th>
+
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr data-ng-repeat="job in pendingJobs.jobs  | filter: {approved: false} | filter: {deleted_at: '!'} | filter: searchKeyword | orderBy:'-date'">
+                            <td><a data-ui-sref="admin.jobs.job-detail({jobId: job._id})">{{job.entity.company_name}}</td>
+                            <td>{{job.location}}</td>
+                            <td>
+                                <ul style="padding: 0px;">
+                                    <li data-ng-repeat="task in job.tasks"
+                                        style="list-style: none">{{task.task_name}}
+                                    </li>
+                                </ul>
+                            </td>
+                            <td>{{job.notes}}</td>
+                            <td>
+                                <input class="checkbox-primary faChkSqr"
+                                       type="checkbox"
+                                       name="approved"
+                                       data-ng-value="1"
+                                       data-ng-click="pendingJobs.put(job)">
+                            </td>
+                            <td>{{job.date | niceDate: 'MM-DD-YYYY'}}</td>
+
+                            <td>
+                                <i data-ng-click="pendingJobs.confirmDelete(job._id)"
+                                   class="fa fa-trash fa-2x"></i>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                </div>
+            </div>
+        </main>
+        </div>

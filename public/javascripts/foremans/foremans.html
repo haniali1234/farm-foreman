@@ -1,0 +1,94 @@
+<div class="" data-ui-view>
+<!--     <div class="row">
+        <div class="col-md-12"> -->
+            <main>
+              <div data-ui-view
+                   class="form-foreman">
+                  <div class="modal-body">
+
+                      <p class="info">
+                          Please fill out the form below to create a job.
+                      </p>
+
+                      <form class="form"
+                            name="jobForm">
+                          <label for="location">Location</label>
+                          <select name="location"
+                                  class="form-control"
+                                  id="location"
+                                  ng-selected="selected"
+                                  data-ng-model="foremansController.formData.location"
+                                  data-ng-options="location as location for location in foremansController.locations  | orderBy:'toString()'">
+                              <option value=''>Select...</option>
+                          </select>
+                          <label for="entity">Entity</label>
+                          <select name="location"
+                                  id="location"
+                                  class="form-control"
+                                  ng-disabled="!foremansController.formData.location"
+                                  data-ng-model="foremansController.formData.entity"
+                                  data-ng-options="entity.company_name for entity in foremansController.entities | filter: foremansController.formData.location | filter: {deleted_at: '!'}">
+                              <option value=''>Select...</option>
+                          </select>
+
+                          <div class="ms-jobs">
+                              <label for="task_name">Jobs</label>
+                              <ui-select multiple
+                                         data-ng-model="foremansController.formData.tasks"
+                                         theme="bootstrap"
+                                         ng-disabled="disabled">
+                                  <ui-select-match placeholder="Select...">{{$item.task_name}}</ui-select-match>
+                                  <ui-select-choices repeat="task in foremansController.tasks | propsFilter: {task_name: $select.search}">
+                                      <div ng-bind-html="task.task_name | highlight: $select.search">
+                                      </div>
+                                  </ui-select-choices>
+                              </ui-select>
+                          </div>
+                         <div class="datepicker">
+                          <label for="calender">Date</label>
+                            <p class="input-group">
+                              <input type="text"
+                                     class="form-control"
+                                     uib-datepicker-popup="{{format}}"
+                                     data-ng-model="foremansController.formData.date"
+                                     is-open="status.opened"
+                                     max-date="maxDate"
+                                     datepicker-options="dateOptions"
+                                     date-disabled="disabled(date, mode)"
+                                     ng-required="true"
+                                     close-text="Close"
+                                     ng-click="open($event)"
+                                     />
+
+                              <span class="input-group-btn">
+                                <button type="button"
+                                        class="btn btn-default"
+                                        ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i>
+                                </button>
+                              </span>
+                              </p>
+                          </div>
+
+                          <div class="form-group">
+                              <label for="task_desc">Description:</label>
+                            <textarea type="text"
+                                      class="form-control"
+                                      data-ng-model="foremansController.formData.notes"
+                                      name="task_desc"
+                                      id="task_desc">
+                            </textarea>
+
+                              <div class="send-button">
+                                  <button class="btn btn-primary"
+                                          type="button"
+                                          ng-click="foremansController.createJob(foremansController.formData)"> SEND
+                                  </button>
+                              </div>
+                          </div>
+                      </form>
+                  </div>
+              </div>
+          </main>
+<!--       </div>
+</div> -->
+</div>
